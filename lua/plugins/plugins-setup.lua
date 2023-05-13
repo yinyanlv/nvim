@@ -9,7 +9,7 @@ local ensure_packer = function()
       '--depth', 
       '1', 
       -- 'https://github.com/wbthomason/packer.nvim',
-      'https://gitcode.net/mirrors/wbthomason/packer.nvim', 
+      'https://gitclone.com/github.com/wbthomason/packer.nvim', 
       install_path
     })
     vim.cmd [[packadd packer.nvim]]
@@ -81,9 +81,8 @@ return packer.startup({
     max_jobs = 16,
     -- 自定义源
     git = {
-        default_url_format = 'https://github.com.cnpmjs.org/%s',
-        -- default_url_format = 'git@github.com:%s',
-        -- default_url_format = 'https://gitclone.com/github.com/%s',
+        default_url_format = 'https://gitclone.com/github.com/%s',
+        -- default_url_format = 'https://github.com.cnpmjs.org/%s',
         -- default_url_format = 'https://gitcode.net/mirrors/%s',
         -- default_url_format = 'https://hub.fastgit.org/%s',
         -- default_url_format = 'https://mirror.ghproxy.com/https://github.com/%s',
