@@ -1,3 +1,16 @@
+local packer = require('packer')
+
+packer.init({
+  package_root = vim.fn.stdpath('data') .. '/site/pack',
+  git = {
+    clone_timeout = 600, -- 设置超时时间（可选）
+  },
+  display = {
+    open_fn = require('packer.util').float,
+  },
+  mirror = 'https://mirrors.tuna.tsinghua.edu.cn/',
+})
+
 -- 自动安装packer
 local ensure_packer = function()
   local fn = vim.fn
@@ -12,6 +25,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+
 -- 保存此文件自动更新安装软件
 -- 注意PackerCompile改成了PackerSync
 -- plugins.lua改成了plugins-setup.lua，适应本地文件名字
@@ -22,7 +36,7 @@ vim.cmd([[
   augroup end
 ]])
 
-return require('packer').startup(function(use)
+return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim' -- 主题
   use {
@@ -63,6 +77,6 @@ return require('packer').startup(function(use)
   }
 
   if packer_bootstrap then
-    require('packer').sync()
+    packer.sync()
   end
 end)
