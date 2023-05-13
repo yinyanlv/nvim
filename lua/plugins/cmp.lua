@@ -1,19 +1,19 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
+local cmp_status_ok, cmp = pcall(require, 'cmp')
 if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
+local snip_status_ok, luasnip = pcall(require, 'luasnip')
 if not snip_status_ok then
   return
 end
 
-require("luasnip.loaders.from_vscode").lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()
 
 -- 下面会用到这个函数
 local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+  local col = vim.fn.col '.' - 1
+  return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s'
 end
 
 
@@ -29,7 +29,7 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),  -- 取消补全，esc也可以退出
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
-    ["<Tab>"] = cmp.mapping(function(fallback)
+    ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expandable() then
@@ -42,11 +42,11 @@ cmp.setup({
         fallback()
       end
     end, {
-      "i",
-      "s",
+      'i',
+      's',
     }),
 
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -55,8 +55,8 @@ cmp.setup({
         fallback()
       end
     end, {
-      "i",
-      "s",
+      'i',
+      's',
     }),
   }),
 

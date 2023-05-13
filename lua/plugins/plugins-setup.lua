@@ -1,14 +1,14 @@
 local packer = require('packer')
 
 packer.init({
-  package_root = vim.fn.stdpath('data') .. '/site/pack',
+  package_root = vim.fn.stdpath('data')..'/site/pack',
   git = {
     clone_timeout = 600, -- 设置超时时间（可选）
   },
   display = {
     open_fn = require('packer.util').float,
   },
-  mirror = 'https://mirrors.tuna.tsinghua.edu.cn/',
+  mirror = 'https://mirrors.tuna.tsinghua.edu.cn',
 })
 
 -- 自动安装packer
