@@ -81,9 +81,10 @@ return packer.startup({
     max_jobs = 16,
     -- 自定义源
     git = {
-        default_url_format = "https://gitclone.com/github.com/%s",
+        default_url_format = "https://github.com.cnpmjs.org/%s",
+        -- default_url_format = "https://gitclone.com/github.com/%s",
         -- default_url_format = "https://gitcode.net/mirrors/%s",
-        -- default_url_format = "https://hub.fastgit.xyz/%s",
+        -- default_url_format = "https://hub.fastgit.org/%s",
         -- default_url_format = "https://mirror.ghproxy.com/https://github.com/%s",
     }
     -- display = {
