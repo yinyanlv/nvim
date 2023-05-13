@@ -14,3 +14,6 @@ require('plugins.autopairs')
 require('plugins.bufferline')
 require('plugins.gitsigns')
 require('plugins.telescope')
+
+-- 编程语言
+require('plugins.go')

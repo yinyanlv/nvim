@@ -53,6 +53,10 @@ return packer.startup({
       'williamboman/mason-lspconfig.nvim',  -- 这个相当于mason.nvim和lspconfig的桥梁
       'neovim/nvim-lspconfig'
     }
+    use {
+      'ray-x/go.nvim',
+      'ray-x/guihua.lua'
+    }
       -- 自动补全
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
