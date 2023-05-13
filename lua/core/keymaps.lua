@@ -26,7 +26,7 @@ keymap.set("n", "<C-H>", ":bprevious<CR>")
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
--- 插件快捷键，
+-- 插件快捷键，cmp
 local pluginKeys = {}
 
 pluginKeys.cmp = function(cmp)
