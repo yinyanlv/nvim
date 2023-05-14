@@ -13,16 +13,27 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
     -- go
-    'gopls',
-    'glint',
-    'golangci_lint_ls',
+    'gopls'
   },
 })
 
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 require('lspconfig').lua_ls.setup {
   capabilities = capabilities,
+}
+
+require('lspconfig').gopls.setup {
+  capabilities = capabilities,
+  cmd = {'gopls'},
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
 }
