@@ -16,8 +16,11 @@ require("mason-lspconfig").setup({
 	},
 })
 
+require("lspconfig").lua_ls.setup {
+  capabilities = require("plugins.lsp.config.default-opt").capabilities,
+}
+
 local servers = {
-	lua_ls = require("plugins.lsp.config.lua_ls"),
 	rust_analyzer = require("plugins.lsp.config.rust_analyzer"),
 	gopls = require("plugins.lsp.config.gopls"),
 }
