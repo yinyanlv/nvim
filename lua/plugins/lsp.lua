@@ -10,14 +10,14 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"lua_ls",
+		"sumneko_lua",
 		"rust_analyzer",
 		"gopls",
 	},
 })
 
 local servers = {
-	lua_ls = require("plugins.lsp.config.lua_ls"),
+	sumneko_lua = require("plugins.lsp.config.sumneko_lua"),
 	rust_analyzer = require("plugins.lsp.config.rust_analyzer"),
 	gopls = require("plugins.lsp.config.gopls"),
 }
