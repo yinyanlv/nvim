@@ -11,7 +11,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- 防止包裹折行
-opt.wrap = false
+opt.wrap = true 
 
 -- 光标行
 opt.cursorline = true
@@ -47,7 +47,7 @@ opt.list = true
 opt.listchars = "space:·"
 
 -- 长度参考线
-opt.colorcolumn = "80"
+opt.colorcolumn = "9999"
 
 -- 当文件被外部程序修改时，自动加载
 opt.autoread = true
