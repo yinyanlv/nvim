@@ -1,8 +1,19 @@
-local builtin = require('telescope.builtin')
+local telescope = require("telescope")
 
--- 进入telescope页面会是插入模式，回到正常模式就可以用j和k来移动了
+telescope.setup({
+	defaults = {
+		-- 打开弹窗后进入的初始模式，默认为 insert，也可以是 normal
+		initial_mode = "insert",
+	},
+	pickers = {
+		find_files = {
+			-- 查找文件换皮肤，支持的参数有： dropdown, cursor, ivy
+			-- theme = "",
+		},
+	},
+	extensions = {
+		-- 扩展插件配置
+	},
+})
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})  -- 环境里要安装ripgrep
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+pcall(telescope.load_extension, "env")

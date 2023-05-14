@@ -10,7 +10,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
--- 防止包裹
+-- 防止包裹折行
 opt.wrap = false
 
 -- 光标行
@@ -33,4 +33,21 @@ opt.smartcase = true
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
-vim.cmd[[colorscheme tokyonight]]
+
+-- utf8
+opt.encoding = "UTF-8"
+opt.fileencoding = "utf-8"
+
+-- jkhl 移动时光标周围保留8行
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+
+-- 不可见字符用·代替
+opt.list = true
+opt.listchars = "space:·"
+
+-- 长度参考线
+opt.colorcolumn = "80"
+
+-- 当文件被外部程序修改时，自动加载
+opt.autoread = true

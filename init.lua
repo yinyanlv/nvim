@@ -1,19 +1,23 @@
-require('plugins.plugins-setup')
+require("basic")
+require("plugins")
+require("keymaps")
+require("colorscheme")
+require("neovide")
 
-require('core.options')
-require('core.keymaps')
+-- plugins
+require("plugins/dashboard")
+require("plugins/telescope")
+require("plugins/project")
+require("plugins/nvim-tree")
+require("plugins/bufferline")
+require("plugins/lualine")
+require("plugins/treesitter")
+require("plugins/nvim-autopairs")
 
--- 插件
-require('plugins.lualine')
-require('plugins.nvim-tree')
-require('plugins.treesitter')
-require('plugins.lsp')
-require('plugins.cmp')
-require('plugins.comment')
-require('plugins.autopairs')
-require('plugins.bufferline')
-require('plugins.gitsigns')
-require('plugins.telescope')
+require("plugins/lsp")
+require("plugins/lsp/cmp")
+require("plugins/lsp/ui")
+require("plugins/null-ls")
 
--- 编程语言
-require('plugins.go')
+require("plugins/dap")
+
